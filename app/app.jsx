@@ -13,7 +13,7 @@ ReactDOM.render(
 
 				<Main>
 						<Switch>
-								<Route path="/" component={Weather}/>
+								<Route exact path="/" component={Weather}/>
 								<Route path="/about" component={About}/>
 								<Route path="/examples" component={Examples}/>
 						</Switch>
