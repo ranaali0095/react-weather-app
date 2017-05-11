@@ -1,7 +1,23 @@
+let webpack = require('webpack');
 let path = require('path');
 
 module.exports = {
-		entry: './app/app.jsx',
+		entry: [
+				'jquery/dist/jquery.min.js',
+				'foundation-sites/dist/js/foundation.min.js',
+				'./app/app.jsx'
+
+		],
+		externals: {
+				//to include jquery from cdn instead of bundling it
+				// jquery: 'jQuery'
+		},
+		plugins: [
+				new webpack.ProvidePlugin({
+						$: "jquery",
+						jQuery: "jquery"
+				})
+		],
 		output: {
 				path: path.resolve(__dirname, './public'),
 				filename: "bundle.js"
@@ -25,7 +41,11 @@ module.exports = {
 				extensions: ['.js', '.jsx']
 		},
 		module: {
-				loaders: [
+				rules: [
+						{
+								test: /\.css$/,
+								use: ['style-loader', 'css-loader']
+						},
 						{
 								loader: 'babel-loader',
 								query: {
@@ -38,3 +58,4 @@ module.exports = {
 		},
 		devtool: 'cheap-module-eval-source-map'
 };
+
