@@ -5,6 +5,10 @@ let Weather = require('Weather');
 let About = require('About');
 let Examples = require('Examples');
 
+//load foundation
+ require('foundation-sites/dist/css/foundation.min.css');
+
+
 let {Route, Link, HashRouter, Switch} = require(
 		'react-router-dom');
 

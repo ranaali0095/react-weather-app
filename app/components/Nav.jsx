@@ -1,40 +1,70 @@
 let React = require('react');
 let {NavLink} = require('react-router-dom');
 
-let Nav = (props) => {
+let Nav = React.createClass({
 
-		return (
-				<div>
-						<h2>Nav Component</h2>
+		onSearch: function(e) {
+				e.preventDefault();
+		},
+		render: function() {
 
-						<NavLink
-								to="/"
-								exact
-								activeClassName="selected"
-								activeStyle={{
-										fontWeight: 'bold'
-								}}>
-								Get The Weather
-						</NavLink>
+				return (
+						<div className="top-bar">
+								<div className="top-bar-left">
+										<ul className="menu">
+												<li className="menu-text"> React Weather</li>
 
-						<NavLink
-								to="/about"
-								activeClassName="selected"
-								activeStyle={{
-										fontWeight: 'bold'
-								}}>
-								About
-						</NavLink>
+												<li>
+														<NavLink
+																to="/"
+																exact
+																activeClassName="selected"
+																activeStyle={{
+																		fontWeight: 'bold'
+																}}>
+																Get The Weather
+														</NavLink>
+												</li>
 
-						<NavLink
-								to="/examples"
-								activeStyle={{
-										fontWeight: 'bold'
-								}}>
-								Examples
-						</NavLink>
-				</div>
-		);
-};
+												<li>
+														<NavLink
+																to="/about"
+																activeClassName="selected"
+																activeStyle={{
+																		fontWeight: 'bold'
+																}}>
+																About
+														</NavLink>
+												</li>
+
+												<li>
+														<NavLink
+																to="/examples"
+																activeStyle={{
+																		fontWeight: 'bold'
+																}}>
+																Examples
+														</NavLink>
+												</li>
+										</ul>
+								</div>
+								<div className="top-bar-right">
+										<form onSubmit={this.onSearch}>
+												<ul className="menu">
+														<li>
+																<input type="search"
+																			 placeholder="Search Weather"/>
+														</li>
+														<li>
+																<input type="submit" className="button" value="Get Weather"/>
+														</li>
+												</ul>
+										</form>
+								</div>
+						</div>
+				);
+		}
+
+});
 
 module.exports = Nav;

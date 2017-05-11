@@ -11,11 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.1",
+    "css-loader": "^0.28.1",
     "express": "^4.15.2",
+    "foundation-sites": "^6.3.1",
+    "jquery": "^3.2.1",
     "react": "^0.14.9",
     "react-dom": "^0.14.9",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.17.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
