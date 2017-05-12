@@ -1,6 +1,8 @@
 let webpack = require('webpack');
 let path = require('path');
 
+let inProduction = (process.env.NODE_ENV === 'production');
+
 module.exports = {
 		entry: [
 				'jquery/dist/jquery.min.js',
@@ -38,13 +40,17 @@ module.exports = {
 						Examples: path.resolve(__dirname, 'app/components/Examples.jsx'),
 						ErrorModal: path.resolve(__dirname,
 								'app/components/ErrorModal.jsx'),
-						applicationStyles: path.resolve(__dirname, 'app/styles/app.css')
+						applicationStyles: path.resolve(__dirname, 'app/styles/app.scss')
 
 				},
 				extensions: ['.js', '.jsx']
 		},
 		module: {
 				rules: [
+						{
+								test: /\.s[ac]ss$/,
+								use: ['style-loader', 'css-loader', 'sass-loader']
+						},
 						{
 								test: /\.css$/,
 								use: ['style-loader', 'css-loader']
@@ -59,6 +65,14 @@ module.exports = {
 						}
 				]
 		},
+
+
 		devtool: 'cheap-module-eval-source-map'
 };
+
+if(inProduction){
+		module.exports.plugins.push(
+				new webpack.optimize.UglifyJsPlugin()
+		)
+}
 
