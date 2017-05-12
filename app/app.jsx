@@ -8,6 +8,9 @@ let Examples = require('Examples');
 //load foundation
  require('foundation-sites/dist/css/foundation.min.css');
 
+ //App css
+require('applicationStyles');
+
 
 let {Route, Link, HashRouter, Switch} = require(
 		'react-router-dom');
