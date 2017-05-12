@@ -4,7 +4,7 @@ let WeatherMessage = ({temp,location}) => {
 
 		return (
 				<div>
-						<p className="text-center">It's it {temp} in {location}</p>
+						<p className="text-center">It's it {temp}˚C in {location}</p>
 				</div>
 		);
 

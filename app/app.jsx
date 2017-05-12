@@ -12,7 +12,7 @@ let Examples = require('Examples');
 require('applicationStyles');
 
 
-let {Route, Link, HashRouter, Switch} = require(
+let {Route, HashRouter, Switch} = require(
 		'react-router-dom');
 
 ReactDOM.render(

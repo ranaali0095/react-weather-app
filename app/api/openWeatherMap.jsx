@@ -12,7 +12,9 @@ module.exports = {
 								throw new Error(res.data.message);
 						} else {
 								console.log(res.data.main.temp);
-								return res.data.main.temp;
+								let tempInFahrenheit = res.data.main.temp;
+								let tempInCelsius = Math.round((tempInFahrenheit - 32) * 5 / 9);
+								return tempInCelsius;
 						}
 				}).catch((err) => {
 						throw new Error(err.data.message);
