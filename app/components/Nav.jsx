@@ -36,6 +36,16 @@ let Nav = React.createClass({
 
 												<li>
 														<NavLink
+																to="/examples"
+																activeStyle={{
+																		fontWeight: 'bold'
+																}}>
+																Examples
+														</NavLink>
+												</li>
+
+												<li>
+														<NavLink
 																to="/about"
 																activeClassName="selected"
 																activeStyle={{
@@ -45,15 +55,6 @@ let Nav = React.createClass({
 														</NavLink>
 												</li>
 
-												<li>
-														<NavLink
-																to="/examples"
-																activeStyle={{
-																		fontWeight: 'bold'
-																}}>
-																Examples
-														</NavLink>
-												</li>
 										</ul>
 								</div>
 								<div className="top-bar-right">

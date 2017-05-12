@@ -5,7 +5,8 @@ let About = (props) => {
 		return (
 				<div>
 						<h1 className="text-center page-title">About</h1>
-						<p>This is a weather application build on React By GeekuTech.</p>
+						<p>This is a weather application develop By
+								<strong>GeekuTech®</strong>.</p>
 
 						<p>
 								Here are some some of tools I used:
@@ -13,7 +14,7 @@ let About = (props) => {
 						<ul>
 								<li>
 										<a href="https://facebook.github.io/react"> React </a>
-										 Javascript framework used.
+										Javascript framework used.
 								</li>
 								<li>
 										<a href="http://openweathermap.org">Open Weather Map</a> - I
