@@ -5,7 +5,7 @@ let WeatherMessage = ({temp,location}) => {
 		debugger;
 		return (
 				<div>
-						<p>It's it {temp} in {location}</p>
+						<p className="text-center">It's it {temp} in {location}</p>
 				</div>
 		);
 
