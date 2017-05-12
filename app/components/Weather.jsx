@@ -33,7 +33,7 @@ let Weather = React.createClass({
 				}, function(err) {
 						that.setState({
 								isLoading: false,
-								errorMessage: "Please enter valid address"
+								errorMessage: "Please enter valid city name."
 						});
 				});
 		},
